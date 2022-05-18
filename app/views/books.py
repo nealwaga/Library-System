@@ -1,7 +1,7 @@
 # internal imports
-from library.forms import book_form
-from library import app, db
-from library.models import Book, Member
+from app.forms import book_form
+from app import app, db
+from app.models import Book, Member
 
 # external imports 
 import requests
