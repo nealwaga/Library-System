@@ -6,7 +6,7 @@ from app import app, db
 import requests
 
 from flask import render_template, redirect, url_for, flash, request
-from library.models import Book, Member
+from app.models import Book, Member
 
 
 # Renders member page
