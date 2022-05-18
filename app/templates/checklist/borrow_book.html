@@ -22,7 +22,13 @@
             {% else %}
               <option selected="selected" required="required" >Books Available</option>
             {% endif %}
+
+            {% for book in books_to_borrow %}
+            <option value={{book.id}}>{{book.title}}</option>
+            {% endfor %}
           </select>
+
+          
         </form>
       </div>
 
