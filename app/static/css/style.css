@@ -1,9 +1,0 @@
-.bgimage {
-    background-image: url('../photos/blog1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-    padding-top: 70px;
-    padding-bottom: 130px;
-}
