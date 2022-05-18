@@ -13,7 +13,19 @@
         aria-label="Close"></button>
       </div>
 
-      
+      <div class="modal-body">
+        <form action="./borrow-book" method="post">
+          <label class="form-label">Select Book:</label>
+          <select name="book_name" class="custom-select form-control" id="book_name">
+            {% if book %}
+              <option selected="selected" required="required" value={{book.id}}>{{ book.title }}</option>
+            {% else %}
+              <option selected="selected" required="required" >Books Available</option>
+            {% endif %}
+          </select>
+        </form>
+      </div>
+
     </div>
   </div>
     
