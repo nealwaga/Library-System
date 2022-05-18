@@ -26,9 +26,18 @@
             {% for book in books_to_borrow %}
             <option value={{book.id}}>{{book.title}}</option>
             {% endfor %}
-          </select>
+        </select>
 
-          
+        <label class="form-label">Select Member:</label>
+        <select name="member_name" required="required" id="member_name" class="custom-select form-control">
+          <option selected="selected">Members</option>
+          {% for member in members_can_borrow %}
+            <option value={{member.id}}>{{ member.member_name }}</option>
+          {% endfor %}
+        </select>
+
+
+
         </form>
       </div>
 
