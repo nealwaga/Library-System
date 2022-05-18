@@ -1,6 +1,6 @@
 # internal imports
-from library.forms import member_form
-from library import app, db
+from app.forms import member_form
+from app import app, db
 
 # external imports 
 import requests
