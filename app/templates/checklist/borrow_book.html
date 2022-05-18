@@ -1,4 +1,10 @@
 {% if book %}
   <div class="modal fade" id="borrowBookModal-{{ book.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"aria-hidden="true">
-    
+
+{% else %}
+    <div class="modal fade" id="borrowBookModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{%endif%}
+
+    </div>
+
   </div>
