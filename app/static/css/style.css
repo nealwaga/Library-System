@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400&display=swap');
 
-*{
+body {
   font-family: 'Poppins', sans-serif;
+  background-image: url('../photos/library101.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 header {
