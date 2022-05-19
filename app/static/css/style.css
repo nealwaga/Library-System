@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
 header {
-    background-color: #0d6efd;
+    background-color: #0b0801;
   }
   .nav-link {
     color: white;

@@ -10,8 +10,8 @@ from app.models import Book, Member
 
 
 # Renders member page
-@app.route('/members', methods=['GET', 'POST'])
-def members_page():
+@app.route('/contacts', methods=['GET', 'POST'])
+def contacts_page():
     # read members from db
     member = Member.query.order_by('id').all() 
     form_member = member_form() 
@@ -35,7 +35,7 @@ def members_page():
     if form_member.errors != {}: # If there are not errors from the validations
         for err_msg in form_member.errors.values():
             flash(f'There was an error with creating a Member: {err_msg}', category = 'danger')
-    return render_template('members/contacts.html', member_form = form_member,
+    return render_template('contacts/contacts.html', member_form = form_member,
                             members = member, length = len(member), 
                             books_to_borrow = books_to_borrow, 
                             members_can_borrow = members_can_borrows, 
@@ -43,8 +43,8 @@ def members_page():
 
 
 # deletes a member
-@app.route('/delete-member/<member_id>', methods=['POST'])
-def delete_member(member_id):
+@app.route('/delete-contact/<member_id>', methods=['POST'])
+def delete_contact(member_id):
     try:
         # reads requested member from db
         member = Member.query.filter_by(id=member_id).first()
@@ -55,13 +55,13 @@ def delete_member(member_id):
     except:
         flash("Error in deletion", category="danger")
 
-    return redirect(url_for('members_page'))
+    return redirect(url_for('contacts_page'))
 
 
 
 # updates a member
-@app.route('/update-member/<member_id>', methods=['GET','POST'])
-def update_member(member_id):
+@app.route('/update-contact/<member_id>', methods=['GET','POST'])
+def update_contact(member_id):
     # reads requested member from db
     member = Member.query.filter_by(id=member_id).first()
     newName = request.form.get("name")
@@ -76,7 +76,7 @@ def update_member(member_id):
         if(member.member_name is not newMember):
             member.member_name = newMember
         db.session.commit()
-        flash("Updated Successfully!", category="success")
+        flash("Updated successfully!", category="success")
 
     except:
         flash("Failed to update", category="danger")

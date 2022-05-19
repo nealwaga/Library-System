@@ -1,34 +1,34 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Members
+    Contacts
 {% endblock %}
 
 {% block content %}
 
-    {% include 'members/add_member_modal.html' %}
-    {% include 'transactions/borrow_book_modal.html' %}
-    {% include 'transactions/return_book_modal.html' %}
+    {% include 'contacts/add_contact.html' %}
+    {% include 'checklist/borrow_book.html' %}
+    {% include 'checklist/return_book.html' %}
 
-    <button type="button" class="btn btn-dark m" data-bs-toggle="modal" data-bs-target="#memberModal">
-        Create
+    <button type="button" class="btn btn-info m" data-bs-toggle="modal" data-bs-target="#memberModal">
+        Add
     </button>
 
-    <button type="button" class="btn btn-dark m" data-bs-toggle="modal" data-bs-target="#borrowBookModal">
+    <button type="button" class="btn btn-info m" data-bs-toggle="modal" data-bs-target="#borrowBookModal">
         Borrow
     </button>
 
-    <button type="button" class="btn btn-dark m" data-bs-toggle="modal" data-bs-target="#returnBookModal">
+    <button type="button" class="btn btn-info m" data-bs-toggle="modal" data-bs-target="#returnBookModal">
         Return
     </button>
 
     {% if length > 0 %}
         <table class="table">
-            <thead class="table-dark">
+            <thead class="table-secondary">
                 <tr>
                     <th scope="col" class="table-id">ID</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Membername</th>
+                    <th scope="col">Username</th>
                     <th scope="col">Phone Number</th>
                     <th scope="col">Amount to Pay</th>
                     <th scope="col"></th>
@@ -36,8 +36,8 @@
             </thead>
             <tbody>
                 {% for member in members %}
-                    {% include 'members/delete_member_modal.html' %}
-                    {% include 'members/update_member_modal.html' %}
+                    {% include 'contacts/delete_contact.html' %}
+                    {% include 'contacts/update_contact.html' %}
                     <tr>
                         <th scope="row" class="table-id">{{ member.id }}</th>
                         <td>{{ member.name }}</td>
@@ -49,7 +49,7 @@
                                 Delete
                             </button>
 
-                            <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#updateMemberModal-{{member.id}}">
+                            <button type="button" class="btn btn-secondary " data-bs-toggle="modal" data-bs-target="#updateMemberModal-{{member.id}}">
                                 Update
                             </button>
                             
@@ -60,7 +60,7 @@
         </table>
 
     {% else %}
-        <div class="text-center empty-text">No member available</div>
+        <div class="text-center empty-text">No user available</div>
     {% endif %}
 
 {% endblock %}
