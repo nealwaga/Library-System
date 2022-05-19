@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, SubmitField
 from wtforms.validators import Length, DataRequired, ValidationError
-from app.models import Member, Book, Checklist
+from app.models import Member, Book, Transaction
 
 
 # form for creating and updating members

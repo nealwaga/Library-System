@@ -1,6 +1,6 @@
 # External modules
 import os
-from app.views import views, books, contacts, checklist
+
 
 
 from flask import Flask
@@ -18,3 +18,5 @@ else:
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
+from app.views import books, checklist, contacts, views
